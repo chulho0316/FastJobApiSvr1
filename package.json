@@ -1,0 +1,31 @@
+{
+  "name": "fastjobapisvr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0"
+  },
+  "_moduleAliases": {
+    "@db": "./database/db.js",
+    "@query": "./database/query.json",
+    "@auth_service": "./auth/service/auth.service.js",
+    "@auth_controller": "./auth/controller/auth.controller.js",
+    "@auth_router": "./auth/auth.router.js",
+    "@middleware": "./middleware/middleware.js",
+    "@auth_dto": "./auth/dto/auth.dto.js"
+  }
+}
