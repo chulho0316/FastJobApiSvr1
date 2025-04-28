@@ -1,5 +1,5 @@
 {
-    "description": "쿼리 관리를 위한 파일",
-    "login": "SELECT * FROM users.user_account WHERE user_id = $1",
-    "loginSuccess": "UPDATE users.user_account SET access_token = $1, refresh_token = $2, updated_at = $3 WHERE user_id = $4"
-  }
+  "description": "SQL 쿼리 관리",
+  "login": "SELECT * FROM users.user_account WHERE user_id = $1",
+  "loginSuccess": "UPDATE users.user_account SET access_token = $1, refresh_token = $2, updated_at = NOW() WHERE user_id = $3"
+}

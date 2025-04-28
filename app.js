@@ -10,7 +10,9 @@ const helmet   = require('helmet');
 const app   = express();
 const port  = process.env.PORT || 4000;
 const CPU   = 2;
+
 const middleWare = require('@middleware');
+
 const authRouter = require('@auth_router');
 
 app.use(morgan('dev'));
@@ -34,10 +36,10 @@ if (cluster.isMaster) {
 }
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: '서버 에러 발생' });
+  console.error('[Unhandled ERROR]', err.stack);
+  res.status(500).json({ success: false, message: '서버 에러 발생', error: err.message });
 });
 
 app.use((req, res) => {
-  res.status(404).json({ message: '요청하신 페이지를 찾을 수 없습니다.' });
+  res.status(404).json({ success: false, message: '존재하지 않는 경로입니다.' });
 });
